@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background-color: gray;
+        padding: 24px;
+      }
+      .grid,
+      .flex,
+      .grid-advanced {
+        background-color: red;
+        /* width: 600px; */
+        width: 100%;
+        max-width: 600px;
+        /* height: 500px; */
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .item {
+        border: solid 3px yellow;
+        height: 100%;
+        min-height: 70px;
+      }
+      .grid .item:nth-of-type(1) {
+        background-color: purple;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 5;
+      }
+      .grid .item:nth-of-type(2) {
+        background-color: orange;
+        grid-column-start: 5;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 9;
+      }
+      .grid .item:nth-of-type(3) {
+        background-color: purple;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 5;
+        grid-row-end: 9;
+      }
+      .grid .item:nth-of-type(4) {
+        background-color: purple;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        grid-row-start: 9;
+        grid-row-end: 13;
+      }
+      .grid .item:nth-of-type(5) {
+        background-color: blue;
+        grid-column-start: 5;
+        grid-column-end: 9;
+        grid-row-start: 9;
+        grid-row-end: 13;
+      }
+      .grid .item:nth-of-type(6) {
+        background-color: green;
+        grid-column-start: 9;
+        grid-column-end: 13;
+        grid-row-start: 9;
+        grid-row-end: 13;
+      }
+
+      @media screen and (max-width: 430px) {
+        .grid {
+          background-color: aqua;
+          display: block;
+        }
+        .grid .item:nth-of-type(2) {
+          display: none;
+        }
+      }
+
+      .grid .item {
+        background-color: blue;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .flex .item {
+        background-color: green;
+        width: calc(100% / 12);
+        order: 3;
+      }
+      .flex .item:nth-of-type(1) {
+        background-color: purple;
+        order: 2;
+        /* width: calc(100% / 12 * 4); */
+      }
+      .flex .item:nth-of-type(2) {
+        background-color: orange;
+        order: 1;
+        /* width: calc(100% / 12 * 4); */
+      }
+
+      .grid-advanced {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+          "greetings news news"
+          "calendar news news"
+          "inbox quote feeling";
+      }
+      .grid-advanced .item:nth-of-type(1) {
+        background-color: aqua;
+        grid-area: greetings;
+      }
+      .grid-advanced .item:nth-of-type(2) {
+        background-color: pink;
+        grid-area: news;
+      }
+      .grid-advanced .item:nth-of-type(3) {
+        background-color: cornflowerblue;
+        grid-area: calendar;
+      }
+      .grid-advanced .item:nth-of-type(4) {
+        background-color: orange;
+        grid-area: inbox;
+      }
+      .grid-advanced .item:nth-of-type(5) {
+        background-color: gray;
+        grid-area: quote;
+      }
+      .grid-advanced .item:nth-of-type(6) {
+        background-color: greenyellow;
+        grid-area: feeling;
+      }
+    </style>
+  </head>
+  <body>
+    Advanced Grid
+    <div class="grid-advanced">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div style="height: 200px"></div>
+    Simple Grid
+    <div class="grid">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div style="height: 200px"></div>
+    Flex
+    <div class="flex">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
